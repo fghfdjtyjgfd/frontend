@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.blog {
+    border: 10px;
+    border-color: black;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 10px;
+    background-color: rgb(183, 183, 183);
+}
