@@ -25,7 +25,6 @@ function Update() {
                 if (response.status === 200) {
                     if (response.statusText === "OK") {
                         setData(response.data)
-                        console.log(response);
                         console.log(params.id);
                     }
                 }

@@ -6,8 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function Home() {
     const [blog, setBlog] = useState([]);
-    const params = useParams();
-    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,10 +26,13 @@ function Home() {
 
     async function deleteBlog(id) {
         try {
-            const response = await axios.delete("http://127.0.0.1:8000/api/books"+ "/" + params.id)
+            const response = await axios.delete("http://127.0.0.1:8000/api/books"+ "/" + id)
             if (response.status === 200) {
-                if (response.statusText === "OK") {
-                    navigate("/")
+                const response = await axios.get("http://127.0.0.1:8000/api/books")
+                if (response.status === 200) {
+                    if (response.statusText === "OK") {
+                        setBlog(response.data)
+                    }
                 }
             }
         } catch (error) {
@@ -43,13 +44,12 @@ function Home() {
         <>
             <h1>List of books</h1>
             <div className={style.container}>
-                
-                {blog.map((item, index) => {
+                {blog.map((item) => {
                     return (
                         <div className={style.blog}>
                             <Blog 
-                                key={index+1}
-                                id={index+1}
+                                key={item.id}
+                                id={item.id}
                                 title={item.title}
                                 author={item.author}
                                 genre={item.genre}
@@ -59,7 +59,6 @@ function Home() {
                         </div>
                     );
                 })}
-                
             </div>
         </>
     );
