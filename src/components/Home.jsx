@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import axios from 'axios';
 import style from '../style/Home.module.css'
 import Blog from './blog'
-import { useNavigate, useParams } from "react-router-dom";
+
 
 function Home() {
     const [blog, setBlog] = useState([]);

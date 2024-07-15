@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from '../style/Create.module.css';
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -25,7 +25,6 @@ function Update() {
                 if (response.status === 200) {
                     if (response.statusText === "OK") {
                         setData(response.data)
-                        console.log(params.id);
                     }
                 }
             } catch (error) {
@@ -42,7 +41,6 @@ function Update() {
             if (response.status === 200) {
                 setData(response.data)
                 navigate("/")
-                console.log(response);
             }
         } catch (error) {
             console.log(error);
@@ -98,7 +96,7 @@ function Update() {
                             <label>Year of publication</label>
                             <input 
                             defaultValue={data.year_of_publication}
-                            type="number"
+                            type=""
                             className={`${errors.title && "error"}`}
                             placeholder="  year of publication" 
                             {...register("year_of_publication", {
