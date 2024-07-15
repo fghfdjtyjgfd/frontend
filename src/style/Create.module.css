@@ -1,18 +1,48 @@
+.outter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+}
+
 .container {
+    border: 5px;
     background-color: rgb(207, 207, 207);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 800px;
+    border-radius: 30px;
+    border-color: black;
+}
+
+.insideContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 30px;
+    margin-top: 20px;
 }
 
 .input {
     padding: 10px;
     margin: 10px;
+
 }
 
 label {
     margin-right: 20px;
+    font-size: 15px;
+}
+
+input {
+    border-radius: 15px;
+    border: 0;
+    border-color: black;
+    height: 30px;
+    width: 200px;
 }
 
 button {
@@ -21,4 +51,36 @@ button {
 
 .error {
     color: red;
+}
+
+.submit {
+    width: 80px;
+    background-color: rgb(134, 255, 132);
+    color: black;
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.update {
+    width: 80px;
+    background-color: #f8ff91;
+    color: black;
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 550;
 }

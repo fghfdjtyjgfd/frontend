@@ -51,62 +51,64 @@ function Update() {
 
     return (
         <>
-            <div>
+            <div className={style.outter}>
                 <h1>Update book</h1>
                 <form onSubmit={handleSubmit(onUpdate)} className={style.container}>
-                    <div className={style.input}>
-                        <label>Title</label>
-                        <input 
-                        defaultValue={data.title}
-                        className={`${errors.title && "error"}`}
-                        placeholder="title" 
-                        {...register("title", {
-                            required: { value: true, message: "Title is required"},
-                            min: { value: 1, message: "Genre is required"}
-                        })} />
-                        {errors.title && <div className={style.error}>{errors.title.message}</div>}
-                    </div>
+                    <div className={style.insideContainer}>
+                        <div className={style.input}>
+                            <label>Title</label>
+                            <input 
+                            defaultValue={data.title}
+                            className={`${errors.title && "error"}`}
+                            placeholder="  title" 
+                            {...register("title", {
+                                required: { value: true, message: "Title is required"},
+                                min: { value: 1, message: "Genre is required"}
+                            })} />
+                            {errors.title && <div className={style.error}>{errors.title.message}</div>}
+                        </div>
 
-                    <div className={style.input}>
-                        <label>Author</label>
-                        <input 
-                        defaultValue={data.author}
-                        className={`${errors.author && "error"}`}
-                        placeholder="author" 
-                        {...register("author", {
-                            required: { value: true, message: "Author is required"},
-                            min: { value: 1, message: "Genre is required"}
-                        })} />
-                        {errors.author && <div className={style.error}>{errors.author.message}</div>}
-                    </div>
+                        <div className={style.input}>
+                            <label>Author</label>
+                            <input 
+                            defaultValue={data.author}
+                            className={`${errors.author && "error"}`}
+                            placeholder="  author" 
+                            {...register("author", {
+                                required: { value: true, message: "Author is required"},
+                                min: { value: 1, message: "Genre is required"}
+                            })} />
+                            {errors.author && <div className={style.error}>{errors.author.message}</div>}
+                        </div>
 
-                    <div className={style.input}>
-                        <label>Genre</label>
-                        <input 
-                        defaultValue={data.genre}
-                        className={`${errors.genre && "error"}`}
-                        placeholder="genre" 
-                        {...register("genre", {
-                            required: { value: true, message: "Genre is required"},
-                            min: { value: 1, message: "Genre is required"}
-                        })} />
-                        {errors.genre && <div className={style.error}>{errors.genre.message}</div>}
-                    </div>
+                        <div className={style.input}>
+                            <label>Genre</label>
+                            <input 
+                            defaultValue={data.genre}
+                            className={`${errors.genre && "error"}`}
+                            placeholder="  genre" 
+                            {...register("genre", {
+                                required: { value: true, message: "Genre is required"},
+                                min: { value: 1, message: "Genre is required"}
+                            })} />
+                            {errors.genre && <div className={style.error}>{errors.genre.message}</div>}
+                        </div>
 
-                    <div className={style.input}>
-                        <label>Year of publication</label>
-                        <input 
-                        defaultValue={data.year_of_publication}
-                        type="number"
-                        className={`${errors.title && "error"}`}
-                        placeholder="year of publication" 
-                        {...register("year_of_publication", {
-                            required: { value: true, message: "Year of publication is required"},
-                            min: { value: 1, message: "Genre is required"}
-                        })} />
-                        {errors.year_of_publication && <div className={style.error}>{errors.year_of_publication.message}</div>}
+                        <div className={style.input}>
+                            <label>Year of publication</label>
+                            <input 
+                            defaultValue={data.year_of_publication}
+                            type="number"
+                            className={`${errors.title && "error"}`}
+                            placeholder="  year of publication" 
+                            {...register("year_of_publication", {
+                                required: { value: true, message: "Year of publication is required"},
+                                min: { value: 1, message: "Genre is required"}
+                            })} />
+                            {errors.year_of_publication && <div className={style.error}>{errors.year_of_publication.message}</div>}
+                        </div>
                     </div>
-                    <button type='submit' className="submit">Update</button>
+                    <button type='submit' className={style.update}>Update</button>
                 </form>
             </div>
         </>

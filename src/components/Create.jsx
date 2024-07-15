@@ -28,62 +28,64 @@ function Create() {
 
     return (
         <>
-            <div>
+            <div className={style.outter}>
                 <h1>Create book</h1>
                 <form onSubmit={handleSubmit(onCreate)} className={style.container}>
-                    <div className={style.input}>
-                        <label>Title</label>
-                        <input 
-                        defaultValue=""
-                        className={`${errors.title && "error"}`}
-                        placeholder="title" 
-                        {...register("title", {
-                            required: { value: true, message: "Title is required"},
-                            min: { value: 1, message: "Title is required"}
-                        })} />
-                        {errors.title && <div className={style.error}>{errors.title.message}</div>}
-                    </div>
+                    <div className={style.insideContainer}>
+                        <div className={style.input}>
+                            <label>Title</label>
+                            <input 
+                            defaultValue=""
+                            className={`${errors.title && "error"}`}
+                            placeholder="  title" 
+                            {...register("title", {
+                                required: { value: true, message: "Title is required"},
+                                min: { value: 1, message: "Title is required"}
+                            })} />
+                            {errors.title && <div className={style.error}>{errors.title.message}</div>}
+                        </div>
 
-                    <div className={style.input}>
-                        <label>Author</label>
-                        <input 
-                        defaultValue=""
-                        className={`${errors.author && "error"}`}
-                        placeholder="author" 
-                        {...register("author", {
-                            required: { value: true, message: "Author is required"},
-                            min: { value: 1, message: "Author is required"}
-                        })} />
-                        {errors.author && <div className={style.error}>{errors.author.message}</div>}
-                    </div>
+                        <div className={style.input}>
+                            <label>Author</label>
+                            <input 
+                            defaultValue=""
+                            className={`${errors.author && "error"}`}
+                            placeholder="  author" 
+                            {...register("author", {
+                                required: { value: true, message: "Author is required"},
+                                min: { value: 1, message: "Author is required"}
+                            })} />
+                            {errors.author && <div className={style.error}>{errors.author.message}</div>}
+                        </div>
 
-                    <div className={style.input}>
-                        <label>Genre</label>
-                        <input 
-                        defaultValue=""
-                        className={`${errors.genre && "error"}`}
-                        placeholder="genre" 
-                        {...register("genre", {
-                            required: { value: true, message: "Genre is required"},
-                            min: { value: 1, message: "Genre is required"}
-                        })} />
-                        {errors.genre && <div className={style.error}>{errors.genre.message}</div>}
-                    </div>
+                        <div className={style.input}>
+                            <label>Genre</label>
+                            <input 
+                            defaultValue=""
+                            className={`${errors.genre && "error"}`}
+                            placeholder="  genre" 
+                            {...register("genre", {
+                                required: { value: true, message: "Genre is required"},
+                                min: { value: 1, message: "Genre is required"}
+                            })} />
+                            {errors.genre && <div className={style.error}>{errors.genre.message}</div>}
+                        </div>
 
-                    <div className={style.input}>
-                        <label>Year of publication</label>
-                        <input 
-                        defaultValue=""
-                        type="number"
-                        className={`${errors.title && "error"}`}
-                        placeholder="year of publication" 
-                        {...register("year_of_publication", {
-                            required: { value: true, message: "Year of publication is required"},
-                            min: { value: 1, message: "Year of publication is required"}
-                        })} />
-                        {errors.year_of_publication && <div className={style.error}>{errors.year_of_publication.message}</div>}
+                        <div className={style.input}>
+                            <label>Year of publication</label>
+                            <input 
+                            defaultValue=""
+                            type="number"
+                            className={`${errors.title && "error"}`}
+                            placeholder="  year of publication" 
+                            {...register("year_of_publication", {
+                                required: { value: true, message: "Year of publication is required"},
+                                min: { value: 1, message: "Year of publication is required"}
+                            })} />
+                            {errors.year_of_publication && <div className={style.error}>{errors.year_of_publication.message}</div>}
+                        </div>
                     </div>
-                    <button type='submit' className="submit">Create</button>
+                    <button type='submit' className={style.submit}>Create</button>
                 </form>
             </div>
         </>

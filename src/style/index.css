@@ -1,6 +1,20 @@
-.submit {
+.update {
     width: 100px;
-    background-color: #bbf4ff;
+    background-color: #f8ff91;
+    color: black;
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+
+    margin-left: 30px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.delete {
+    width: 80px;
+    background-color: rgb(255, 118, 118);
     color: black;
     border: none;
     text-decoration: none;
@@ -10,4 +24,14 @@
     padding: 10px;
     text-align: center;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.blog {
+    min-width: 230px;
+    max-width: 230px;
+
+    min-height: 230px;
+    max-height: 230px;
 }
